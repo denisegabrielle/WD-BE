@@ -22,7 +22,6 @@ body {
     color: white;
 }
 
-
 .navbar-brand:hover,
 .icons:hover {
     color: #FFDDFC;
@@ -54,10 +53,9 @@ body {
 
 .text {
     position: relative;
-    width: 80vw;
+    width: auto;
     font-size: 6vw;
-    margin-top: 9%;
-    margin-left: 10%;
+    margin-left: 50%;
     font-weight: bold;
 }
 
@@ -153,7 +151,6 @@ body {
     display: block;
     width: 100%;
 }
-
 
 @media (max-width: 500px) {
     .navbar-brand {

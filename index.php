@@ -34,19 +34,17 @@
         <img src=".//assets/media/img3.png" id="img3" class="elements">
         <img src=".//assets/media/img4.png" id="img4" class="elements">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="text">Where Imagination
-                        Thrives and Technology
-                        Empowers</h1>
-                </div>
-                <a class="gotToProjects" href="#section-projects">
-                    <button type="button" class="btn btn-secondary mt-3">
-                        Projects
-                    </button>
-                </a>
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text">Where Imagination
+                    Thrives and Technology
+                    Empowers</h1>
             </div>
+            <a class="gotToProjects" href="#section-projects">
+                <button type="button" class="btn btn-secondary mt-3">
+                    Projects
+                </button>
+            </a>
         </div>
     </section>
 
