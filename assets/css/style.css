@@ -51,14 +51,6 @@ body {
     overflow: hidden;
 }
 
-.text {
-    position: relative;
-    width: auto;
-    font-size: 6vw;
-    margin-left: 50%;
-    font-weight: bold;
-}
-
 .elements {
     position: absolute;
     z-index: 0;
