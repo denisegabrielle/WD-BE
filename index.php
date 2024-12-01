@@ -35,8 +35,8 @@
         <img src=".//assets/media/img4.png" id="img4" class="elements">
 
         <div class="row">
-            <div class="col-12">
-                <h1 class="text">Where Imagination
+            <div class="col-12 fluid">
+                <h1 style="font-size: 7vw; font-weight: bold; margin-left:5%; margin-top: 4%;">Where Imagination
                     Thrives and Technology
                     Empowers</h1>
             </div>
@@ -111,7 +111,7 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <a href="#" target="_blank">
+                    <a href="projects/A08/index.php" target="_blank">
                         <img src=".//assets/media/p1.png" />
                     </a>
                 </div>
