@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST['btnGoToPi'])) {
-  header("Location: personalityIsland.php");
+  header("Location: islandOfPersonality.php");
 }
 
 ?>

@@ -11,8 +11,6 @@ body {
     color: transparent;
 }
 
-
-
 .container-elements {
     position: relative;
 }
@@ -22,7 +20,7 @@ body {
 }
 
 #img1 {
-    width: 30%;
+    width: 20%;
     margin-top: 0;
     margin-left: 0;
 }
@@ -34,7 +32,7 @@ body {
 }
 
 #img3 {
-    width: 40%;
+    width: 20%;
     margin-top: 100%;
     margin-left: 0%;
 }
