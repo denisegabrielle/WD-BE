@@ -2,14 +2,13 @@
 include("connect.php");
 include("classes.php");
 
-$islandHeaderContainers = array();
-$islandContentContainers = array();
+$islandHeaderContainer = array();
+$islandContentContainer = array();
 
 $islandOfPersonalityID = $_GET['id'];
 
 $islandHeaderQuery = "SELECT name, longDescription, color FROM `islandsofpersonality` WHERE islandOfPersonalityID = '$islandOfPersonalityID'";
 $islandHeaderResults = executeQuery($islandHeaderQuery);
-
 
 while ($islandHeader = mysqli_fetch_assoc($islandHeaderResults)) {
     $ih = new contentHeader(
@@ -17,7 +16,7 @@ while ($islandHeader = mysqli_fetch_assoc($islandHeaderResults)) {
         $islandHeader['color'],
         $islandHeader['longDescription'],
     );
-    array_push($islandHeaderContainers, $ih);
+    array_push($islandHeaderContainer, $ih);
 }
 
 $islandContentQuery = "SELECT * FROM `islandcontents` WHERE islandOfPersonalityID = '$islandOfPersonalityID'";
@@ -31,8 +30,7 @@ while ($islandContent = mysqli_fetch_assoc($islandContentResults)) {
         $islandContent['content'],
         $islandContent['color'],
     );
-
-    array_push($islandContentContainers, $ic);
+    array_push($islandContentContainer, $ic);
 }
 ?>
 <!DOCTYPE html>
@@ -57,17 +55,19 @@ while ($islandContent = mysqli_fetch_assoc($islandContentResults)) {
 
     <div class="container">
         <div class="row">
-            <?php foreach ($islandHeaderContainers as $islandHeaderContainer) { ?>
-                <?php echo $islandHeaderContainer->buildHeader(); ?>
+            <?php foreach ($islandHeaderContainer as $islandHeader) { ?>
+                <?php echo $islandHeader->buildHeader(); ?>
             <?php } ?>
         </div>
-                
-         <div class="row align-items-center mt-5">
-            <?php foreach ($islandContentContainers as $islandContentContainer) { ?>
-                <?php echo $islandContentContainer->buildContentContainer(); ?>
-            <?php } ?>
-        </div> 
+        <div class="row mt-5">
+            <img src="shared/assets/imgs/img3.png">
+        </div>
 
+        <div class="row align-items-center mt-5">
+            <?php foreach ($islandContentContainer as $islandContent) { ?>
+                <?php echo $islandContent->buildContentContainer(); ?>
+            <?php } ?>
+        </div>
     </div>
 
 </body>
