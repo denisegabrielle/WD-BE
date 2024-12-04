@@ -2,40 +2,43 @@
 include("connect.php");
 include("classes.php");
 
+$islandHeaderContainers = array();
 $islandContentContainers = array();
 
-if (isset($_GET['id'])) {
-    $id = intval($_GET['id']); // Sanitize input
-    $contentQuery = "SELECT islandcontents.*, islandsofpersonality.name AS ip_name, islandsofpersonality.longDescription AS ip_longDescription 
-    FROM islandsofpersonality 
-    JOIN islandcontents 
-    ON islandsofpersonality.islandOfPersonalityID = islandcontents.islandOfPersonalityID 
-    WHERE islandsofpersonality.islandOfPersonalityID = $id";
+$islandOfPersonalityID = $_GET['id'];
 
-    $contentResults = executeQuery($contentQuery);
+$islandHeaderQuery = "SELECT name, longDescription, color FROM `islandsofpersonality` WHERE islandOfPersonalityID = '$islandOfPersonalityID'";
+$islandHeaderResults = executeQuery($islandHeaderQuery);
 
-    while ($islandContents = mysqli_fetch_assoc($contentResults)) {
-        $ic = new islandContent(
-            $islandContents['islandContentID'],
-            $islandContents['islandOfPersonalityID'],
-            $islandContents['ip_name'],
-            $islandContents['ip_longDescription'],
-            $islandContents['image'],
-            $islandContents['content'],
-            $islandContents['color']
-        );
 
-        array_push($islandContentContainers, $ic);
-    }
+while ($islandHeader = mysqli_fetch_assoc($islandHeaderResults)) {
+    $ih = new contentHeader(
+        $islandHeader['name'],
+        $islandHeader['color'],
+        $islandHeader['longDescription'],
+    );
+    array_push($islandHeaderContainers, $ih);
 }
 
+$islandContentQuery = "SELECT * FROM `islandcontents` WHERE islandOfPersonalityID = '$islandOfPersonalityID'";
+$islandContentResults = executeQuery($islandContentQuery);
 
+while ($islandContent = mysqli_fetch_assoc($islandContentResults)) {
+    $ic = new islandContent(
+        $islandContent['islandContentID'],
+        $islandContent['islandOfPersonalityID'],
+        $islandContent['image'],
+        $islandContent['content'],
+        $islandContent['color'],
+    );
+
+    array_push($islandContentContainers, $ic);
+}
 ?>
-
 <!DOCTYPE html>
 
 <head>
-    <title></title>
+    <title>Content</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -52,7 +55,20 @@ if (isset($_GET['id'])) {
         <img src="shared/assets/imgs/img1.png" class="elements" id="img3">
     </div>
 
-    
+    <div class="container">
+        <div class="row">
+            <?php foreach ($islandHeaderContainers as $islandHeaderContainer) { ?>
+                <?php echo $islandHeaderContainer->buildHeader(); ?>
+            <?php } ?>
+        </div>
+                
+         <div class="row align-items-center mt-5">
+            <?php foreach ($islandContentContainers as $islandContentContainer) { ?>
+                <?php echo $islandContentContainer->buildContentContainer(); ?>
+            <?php } ?>
+        </div> 
+
+    </div>
 
 </body>
 
