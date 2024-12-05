@@ -31,6 +31,7 @@ while ($islandOfPersonality = mysqli_fetch_assoc($islandOfPersonalityResults)) {
     <link rel="stylesheet" href="shared/assets/css/style.css">
     <link href="https://fonts.cdnfonts.com/css/carton-six" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/raleway-5" rel="stylesheet">
+    <link rel="icon" type="image/png" href="shared/assets/imgs/favicon.png">
 </head>
 
 <body>
@@ -41,8 +42,8 @@ while ($islandOfPersonality = mysqli_fetch_assoc($islandOfPersonalityResults)) {
     </div>
 
     <div class="container">
-        <h1 class="title text-center">ISLAND OF PERSONALITY</h1>
-        <div class="row align-items-center mt-2">
+        <h1 class="title text-center m-5">ISLAND OF PERSONALITY</h1>
+        <div class="row align-items-center mt-2 m-5">
             <?php foreach ($islandOfPersonalityContainers as $islandOfPersonalityContainer) { ?>
                 <?php echo $islandOfPersonalityContainer->buildIslandOfPersonalityContainer(); ?>
             <?php } ?>

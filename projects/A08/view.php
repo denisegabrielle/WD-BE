@@ -44,6 +44,7 @@ while ($islandContent = mysqli_fetch_assoc($islandContentResults)) {
     <link rel="stylesheet" href="shared/assets/css/style.css">
     <link href="https://fonts.cdnfonts.com/css/carton-six" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/raleway-5" rel="stylesheet">
+    <link rel="icon" type="image/png" href="shared/assets/imgs/favicon.png">
 </head>
 
 <body>
@@ -54,7 +55,7 @@ while ($islandContent = mysqli_fetch_assoc($islandContentResults)) {
     </div>
 
     <div class="container">
-        <div class="row">
+        <div class="row m-5">
             <?php foreach ($islandHeaderContainer as $islandHeader) { ?>
                 <?php echo $islandHeader->buildHeader(); ?>
             <?php } ?>
@@ -63,13 +64,12 @@ while ($islandContent = mysqli_fetch_assoc($islandContentResults)) {
             <img src="shared/assets/imgs/img3.png">
         </div>
 
-        <div class="row align-items-center mt-5">
+        <div class="row align-items-center mt-5 m-5">
             <?php foreach ($islandContentContainer as $islandContent) { ?>
                 <?php echo $islandContent->buildContentContainer(); ?>
             <?php } ?>
         </div>
     </div>
-
 </body>
 
 </html>

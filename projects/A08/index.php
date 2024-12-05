@@ -16,6 +16,7 @@ if (isset($_POST['btnGoToPi'])) {
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link href="https://fonts.cdnfonts.com/css/carton-six" rel="stylesheet">
+  <link rel="icon" type="image/png" href="shared/assets/imgs/favicon.png">
                 
   <style>
     h1 {
@@ -47,7 +48,6 @@ if (isset($_POST['btnGoToPi'])) {
 </head>
 
 <body>
-
   <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
     <div class="w3-display-topleft w3-padding-large w3-xlarge">
       <img src="shared/assets/imgs/logo.png">
@@ -64,7 +64,6 @@ if (isset($_POST['btnGoToPi'])) {
       </form>
     </div>
   </div>
-
 </body>
 
 </html>
