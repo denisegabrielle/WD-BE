@@ -19,17 +19,18 @@ class islandOfPersonality
     {
         return
             '
-            <div class="col-12 col-md-6 p-3">
+            <div class="swiper-slide">
                 <a href="view.php?id=' . $this->islandOfPersonalityID . '" style="text-decoration: none;">
                     <button type="submit" id="btnView" name="id" style="background-color:transparent; border:none;">
                         <img src="' . $this->image . '" class="img-fluid">
                     </button>
                 </a>
+                <div class="overlay">
+                    <h1 class="islandName" style="color:' . $this->color . ';">' . $this->name . '</h1>
+                    <p class="description" style="color:' . $this->color . ';">' . $this->shortDescription . '</p>
+                </div>
             </div>
-            <div class="col-12 col-md-6 p-3 text-bg">
-                <h1 class="islandName" style="color:' . $this->color . ';">' . $this->name . '</h1>
-                <h5 class="description" style="color:' . $this->color . ';">' . $this->shortDescription . '</h5>
-            </div>
+           
         ';
     }
 }

@@ -16,15 +16,15 @@ if (isset($_POST['btnGoToPi'])) {
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link href="https://fonts.cdnfonts.com/css/carton-six" rel="stylesheet">
-  <link rel="icon" type="image/png" href="shared/assets/imgs/favicon.png">
-                
+  <link rel="icon" type="image/png" href="assets/imgs/favicon.png">
+
   <style>
     h1 {
       font-family: 'Carton Six', sans-serif;
-      text-align: center;   
+      text-align: center;
     }
 
-    body{
+    body {
       font-family: "Raleway", sans-serif
     }
 
@@ -32,9 +32,9 @@ if (isset($_POST['btnGoToPi'])) {
     html {
       height: 100%
     }
-
+    
     .bgimg {
-      background-image: url('shared/assets/imgs/bg1.png');
+      background-image: url('assets/imgs/bg1.png');
       min-height: 100%;
       background-position: center;
       background-size: cover;
@@ -50,7 +50,7 @@ if (isset($_POST['btnGoToPi'])) {
 <body>
   <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
     <div class="w3-display-topleft w3-padding-large w3-xlarge">
-      <img src="shared/assets/imgs/logo.png">
+      <img src="assets/imgs/logo.png">
     </div>
     <div class="w3-display-middle">
       <h1 class="w3-jumbo w3-animate-top">CORE MEMORIES</h1>
