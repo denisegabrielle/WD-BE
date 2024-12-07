@@ -1,6 +1,6 @@
 <?php
 include("connect.php");
-include("classes.php");
+include("assets/php/classes.php");
 
 $islandOfPersonalityContainers = array();
 
